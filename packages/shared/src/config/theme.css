@@ -1,11 +1,15 @@
 :root {
+  color-scheme: light;
+
   --crm-color-primary: #2688eb;
+  --crm-color-primary-contrast: #ffffff;
   --crm-color-danger: #e64646;
   --crm-color-text: #17212b;
   --crm-color-bg: #f5f6f8;
   --crm-surface: #ffffff;
   --crm-muted: #6b6b6b;
   --crm-border: #e6e4e3;
+  --crm-overlay: rgb(0 0 0 / 40%);
   --crm-radius-md: 8px;
   --crm-tap-target: 44px;
   --crm-sidebar-width: 280px;

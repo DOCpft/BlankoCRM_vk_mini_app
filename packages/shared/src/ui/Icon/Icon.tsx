@@ -1,6 +1,6 @@
 import { Icon28MenuOutline } from '@vkontakte/icons';
 
-export type IconName = 'menu' | 'home' | 'clients' | 'services' | 'appointments' | 'schedule' | 'profile' | 'settings';
+export type IconName = 'menu' | 'home' | 'clients' | 'services' | 'appointments' | 'schedule' | 'profile' | 'settings' | 'theme';
 
 const glyphs: Record<Exclude<IconName, 'menu'>, string> = {
   home: '⌂',
@@ -10,6 +10,7 @@ const glyphs: Record<Exclude<IconName, 'menu'>, string> = {
   schedule: '◷',
   profile: '●',
   settings: '⚙',
+  theme: '◐',
 };
 
 export function Icon({ name }: { name: IconName }) {

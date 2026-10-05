@@ -61,13 +61,13 @@
 }
 
 .auth-error {
-  background: rgb(230 70 70 / 10%);
+  background: color-mix(in srgb, var(--crm-color-danger) 12%, transparent);
   color: var(--crm-color-danger);
 }
 
 .auth-success {
-  background: rgb(34 197 94 / 10%);
-  color: #16743a;
+  background: color-mix(in srgb, var(--crm-status-scheduled) 14%, transparent);
+  color: color-mix(in srgb, var(--crm-status-scheduled) 72%, var(--crm-color-text));
 }
 
 .auth-vk-login {

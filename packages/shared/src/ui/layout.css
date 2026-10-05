@@ -42,6 +42,10 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
+.crm-app {
+  min-height: 100dvh;
+}
+
 .crm-shell {
   min-height: 100dvh;
   touch-action: pan-y;
@@ -223,7 +227,7 @@ body {
   height: var(--avatar-size, 48px);
   border-radius: 50%;
   background: var(--crm-color-primary);
-  color: white;
+  color: var(--crm-color-primary-contrast);
   font-size: 15px;
   font-weight: 600;
 }
@@ -242,7 +246,7 @@ body {
   inset: 0;
   width: 100%;
   border: 0;
-  background: rgb(0 0 0 / 40%);
+  background: var(--crm-overlay);
 }
 
 .crm-modal {
@@ -301,13 +305,13 @@ body {
 }
 
 .crm-snackbar--error {
-  background: rgb(230 70 70 / 10%);
+  background: color-mix(in srgb, var(--crm-color-danger) 12%, transparent);
   color: var(--crm-color-danger);
 }
 
 .crm-snackbar--success {
-  background: rgb(34 197 94 / 10%);
-  color: #16743a;
+  background: color-mix(in srgb, var(--crm-status-scheduled) 14%, transparent);
+  color: color-mix(in srgb, var(--crm-status-scheduled) 72%, var(--crm-color-text));
 }
 
 .crm-form-actions {
@@ -498,6 +502,99 @@ body {
   height: 22px;
 }
 
+.crm-theme-options {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.crm-theme-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: var(--crm-tap-target);
+  padding: 12px 16px;
+  border: 1px solid var(--crm-border);
+  border-radius: var(--crm-card-radius);
+  background: var(--crm-surface);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 120ms ease, background 120ms ease, box-shadow 120ms ease;
+}
+
+.crm-theme-option:hover {
+  background: var(--crm-card-active-bg);
+}
+
+.crm-theme-option:focus-visible {
+  outline: 2px solid var(--crm-color-primary);
+  outline-offset: 2px;
+}
+
+.crm-theme-option--active {
+  border-color: var(--crm-color-primary);
+  box-shadow: 0 0 0 1px var(--crm-color-primary);
+}
+
+.crm-theme-option__preview {
+  position: relative;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  border: 1px solid var(--crm-border);
+  border-radius: 10px;
+}
+
+.crm-theme-option__preview::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 58% 0;
+}
+
+.crm-theme-option__dot {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}
+
+.crm-theme-option__preview--light { background: #f5f6f8; }
+.crm-theme-option__preview--light::before { background: #ffffff; }
+.crm-theme-option__preview--light .crm-theme-option__dot { background: #2688eb; }
+
+.crm-theme-option__preview--dark { background: #0e1116; }
+.crm-theme-option__preview--dark::before { background: #171c23; }
+.crm-theme-option__preview--dark .crm-theme-option__dot { background: #5b9bff; }
+
+.crm-theme-option__preview--rose { background: #fbf4f7; }
+.crm-theme-option__preview--rose::before { background: #ffffff; }
+.crm-theme-option__preview--rose .crm-theme-option__dot { background: #c2749b; }
+
+.crm-theme-option__body {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.crm-theme-option__body small {
+  color: var(--crm-muted);
+}
+
+.crm-theme-option__check {
+  flex: 0 0 auto;
+  color: var(--crm-color-primary);
+  font-size: 18px;
+  font-weight: 700;
+}
+
 .crm-settings-form {
   display: flex;
   max-width: 560px;
@@ -543,7 +640,7 @@ body {
   min-height: var(--crm-tap-target);
   border: 1px dashed var(--crm-border);
   border-radius: var(--crm-radius-md);
-  background: rgb(255 255 255 / 60%);
+  background: color-mix(in srgb, var(--crm-surface) 60%, transparent);
   color: var(--crm-color-primary);
   text-align: left;
 }
@@ -576,14 +673,14 @@ body {
   white-space: nowrap;
 }
 
-.crm-status-badge--scheduled { background: color-mix(in srgb, var(--crm-status-scheduled) 15%, white); color: #16743a; }
-.crm-status-badge--pending { background: color-mix(in srgb, var(--crm-status-pending) 18%, white); color: #855500; }
-.crm-status-badge--completed { background: color-mix(in srgb, var(--crm-status-completed) 20%, white); color: #475569; }
-.crm-status-badge--cancelled { background: color-mix(in srgb, var(--crm-status-cancelled) 15%, white); color: #a62626; }
-.crm-status-badge--noshow { background: color-mix(in srgb, var(--crm-status-noshow) 15%, white); color: #334155; }
-.crm-status-badge--rejected { background: color-mix(in srgb, var(--crm-status-rejected) 15%, white); color: #7e22ce; }
+.crm-status-badge--scheduled { background: color-mix(in srgb, var(--crm-status-scheduled) 16%, var(--crm-surface)); color: color-mix(in srgb, var(--crm-status-scheduled) 72%, var(--crm-color-text)); }
+.crm-status-badge--pending { background: color-mix(in srgb, var(--crm-status-pending) 18%, var(--crm-surface)); color: color-mix(in srgb, var(--crm-status-pending) 72%, var(--crm-color-text)); }
+.crm-status-badge--completed { background: color-mix(in srgb, var(--crm-status-completed) 20%, var(--crm-surface)); color: color-mix(in srgb, var(--crm-status-completed) 70%, var(--crm-color-text)); }
+.crm-status-badge--cancelled { background: color-mix(in srgb, var(--crm-status-cancelled) 16%, var(--crm-surface)); color: color-mix(in srgb, var(--crm-status-cancelled) 72%, var(--crm-color-text)); }
+.crm-status-badge--noshow { background: color-mix(in srgb, var(--crm-status-noshow) 16%, var(--crm-surface)); color: color-mix(in srgb, var(--crm-status-noshow) 70%, var(--crm-color-text)); }
+.crm-status-badge--rejected { background: color-mix(in srgb, var(--crm-status-rejected) 16%, var(--crm-surface)); color: color-mix(in srgb, var(--crm-status-rejected) 72%, var(--crm-color-text)); }
 .crm-status-badge--archived,
-.crm-status-badge--withdrawn { background: #f0f0f0; color: var(--crm-muted); }
+.crm-status-badge--withdrawn { background: var(--crm-card-active-bg); color: var(--crm-muted); }
 
 @media (min-width: 1024px) {
   .crm-appbar > button:first-child {

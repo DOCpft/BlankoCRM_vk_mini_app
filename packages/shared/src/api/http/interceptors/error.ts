@@ -5,6 +5,7 @@ import { ApiError } from '../../ApiError';
 function getErrorMessage(data: unknown): string | undefined {
   if (typeof data !== 'object' || data === null) return undefined;
   if ('detail' in data && typeof data.detail === 'string') return data.detail;
+  if ('error' in data && typeof data.error === 'string') return data.error;
   if ('title' in data && typeof data.title === 'string') return data.title;
   if ('message' in data && typeof data.message === 'string') return data.message;
   return undefined;

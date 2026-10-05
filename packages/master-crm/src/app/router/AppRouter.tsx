@@ -14,6 +14,7 @@ import { ProfilePage } from '../../features/profile/ui/ProfilePage';
 import { TelegramSettingsPage } from '../../features/profile/ui/TelegramSettingsPage';
 import { ReminderSettingsPage } from '../../features/profile/ui/ReminderSettingsPage';
 import { TimezoneSettingsPage } from '../../features/profile/ui/TimezoneSettingsPage';
+import { ThemeSettingsPage } from '../../features/theme/ui/ThemeSettingsPage';
 
 export function AppRouter() {
   return (
@@ -37,6 +38,7 @@ export function AppRouter() {
           <Route path="/profile/telegram" element={<TelegramSettingsPage />} />
           <Route path="/profile/reminders" element={<ReminderSettingsPage />} />
           <Route path="/profile/timezone" element={<TimezoneSettingsPage />} />
+          <Route path="/profile/theme" element={<ThemeSettingsPage />} />
           <Route path="*" element={<Navigate to="/appointments" replace />} />
         </Route>
       </Route>

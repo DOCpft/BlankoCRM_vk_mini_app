@@ -1,0 +1,59 @@
+/*
+ * Темы оформления.
+ *
+ * Базовая (светлая) палитра описана в `theme.css` на `:root`.
+ * Здесь — только переопределения под `html[data-crm-theme="..."]`,
+ * который выставляет `ThemeProvider`. Чтобы добавить новую тему, достаточно
+ * добавить блок ниже и запись в `THEMES` (packages/master-crm/src/entities/theme/model/themes.ts).
+ */
+
+/* Светлая — совпадает с базовыми токенами, задаём явно для наглядности. */
+[data-crm-theme='light'] {
+  color-scheme: light;
+}
+
+/* Тёмная */
+[data-crm-theme='dark'] {
+  color-scheme: dark;
+
+  --crm-color-primary: #5b9bff;
+  --crm-color-primary-contrast: #0b0f14;
+  --crm-color-danger: #ff6b6b;
+  --crm-color-text: #e7eaee;
+  --crm-color-bg: #0e1116;
+  --crm-surface: #171c23;
+  --crm-muted: #9aa4b2;
+  --crm-border: #2a323d;
+  --crm-overlay: rgb(0 0 0 / 60%);
+  --crm-card-shadow: 0 1px 3px rgb(0 0 0 / 50%);
+  --crm-card-active-bg: rgb(255 255 255 / 6%);
+  --crm-status-scheduled: #34d399;
+  --crm-status-pending: #fbbf24;
+  --crm-status-completed: #9aa4b2;
+  --crm-status-cancelled: #f87171;
+  --crm-status-noshow: #8b96a5;
+  --crm-status-rejected: #c084fc;
+}
+
+/* Розовая */
+[data-crm-theme='rose'] {
+  color-scheme: light;
+
+  --crm-color-primary: #c2749b;
+  --crm-color-primary-contrast: #ffffff;
+  --crm-color-danger: #e64646;
+  --crm-color-text: #3a2a33;
+  --crm-color-bg: #fbf4f7;
+  --crm-surface: #ffffff;
+  --crm-muted: #8a7080;
+  --crm-border: #f0dfe7;
+  --crm-overlay: rgb(58 42 51 / 40%);
+  --crm-card-shadow: 0 1px 3px rgb(146 84 117 / 14%);
+  --crm-card-active-bg: rgb(194 116 155 / 8%);
+  --crm-status-scheduled: #2fa36b;
+  --crm-status-pending: #d98a1f;
+  --crm-status-completed: #a98fa0;
+  --crm-status-cancelled: #d9534f;
+  --crm-status-noshow: #6b5b66;
+  --crm-status-rejected: #9a5bd6;
+}

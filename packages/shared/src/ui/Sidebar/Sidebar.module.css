@@ -52,7 +52,7 @@
 
 .linkActive {
   color: var(--crm-color-primary);
-  background: rgb(38 136 235 / 10%);
+  background: color-mix(in srgb, var(--crm-color-primary) 12%, transparent);
   font-weight: 600;
 }
 
@@ -67,7 +67,7 @@
   inset: 0;
   padding: 0;
   border: 0;
-  background: rgb(0 0 0 / 40%);
+  background: var(--crm-overlay);
   opacity: 0;
   animation: fadeIn 200ms ease-out forwards;
 }

@@ -9,6 +9,7 @@ const navigation = [
   { id: 'services', label: 'Услуги', icon: <Icon name="services" />, href: '/services' },
   { id: 'schedule', label: 'Расписание', icon: <Icon name="schedule" />, href: '/schedule' },
   { id: 'profile', label: 'Профиль', icon: <Icon name="profile" />, href: '/profile' },
+  { id: 'theme', label: 'Оформление', icon: <Icon name="theme" />, href: '/profile/theme' },
   { id: 'settings', label: 'Настройки', icon: <Icon name="settings" />, href: '/profile/reminders' },
 ];
 
@@ -22,6 +23,7 @@ const pages = [
   { path: '/profile/reminders', title: 'Напоминания' },
   { path: '/profile/timezone', title: 'Часовой пояс' },
   { path: '/profile', title: 'Профиль' },
+  { path: '/profile/theme', title: 'Оформление' },
 ];
 
 export function AppShell() {

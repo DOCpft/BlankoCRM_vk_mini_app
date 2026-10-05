@@ -24,6 +24,7 @@ export function VkLoginButton() {
       setAuth(auth);
       navigate('/appointments', { replace: true });
     } catch (requestError: unknown) {
+      console.error('VK Mini Apps auth failed', requestError);
       setError(getAuthErrorMessage(requestError));
     } finally {
       setLoading(false);
