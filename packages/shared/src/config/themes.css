@@ -22,6 +22,7 @@
   --crm-color-text: #e7eaee;
   --crm-color-bg: #0e1116;
   --crm-surface: #171c23;
+  --crm-sidebar-bg: #12171d;
   --crm-muted: #9aa4b2;
   --crm-border: #2a323d;
   --crm-overlay: rgb(0 0 0 / 60%);
@@ -35,21 +36,32 @@
   --crm-status-rejected: #c084fc;
 }
 
-/* Розовая */
+/* Розовая — выраженная, но мягкая палитра */
 [data-crm-theme='rose'] {
   color-scheme: light;
 
-  --crm-color-primary: #c2749b;
+  --crm-color-primary: #b8437f;
   --crm-color-primary-contrast: #ffffff;
-  --crm-color-danger: #e64646;
-  --crm-color-text: #3a2a33;
-  --crm-color-bg: #fbf4f7;
+  --crm-color-danger: #d9534f;
+  --crm-color-text: #3b2a34;
+  --crm-color-bg: #fdf2f8;
   --crm-surface: #ffffff;
-  --crm-muted: #8a7080;
-  --crm-border: #f0dfe7;
-  --crm-overlay: rgb(58 42 51 / 40%);
-  --crm-card-shadow: 0 1px 3px rgb(146 84 117 / 14%);
-  --crm-card-active-bg: rgb(194 116 155 / 8%);
+  --crm-sidebar-bg: #fbe8f1;
+  --crm-muted: #8a6c7e;
+  --crm-border: #f2d7e4;
+  --crm-overlay: rgb(59 42 52 / 40%);
+  --crm-card-shadow: 0 1px 4px rgb(150 90 120 / 16%);
+  --crm-card-active-bg: rgb(184 67 127 / 8%);
+  /* Обводка плашек/слотов: жёлтый -> розовый, с лёгким блеском. */
+  --crm-card-border-color: transparent;
+  --crm-card-outline: linear-gradient(
+    135deg,
+    #f7c948 0%,
+    #ffd777 20%,
+    #fff3da 40%,
+    #f583b7 70%,
+    var(--crm-color-primary) 100%
+  );
   --crm-status-scheduled: #2fa36b;
   --crm-status-pending: #d98a1f;
   --crm-status-completed: #a98fa0;
